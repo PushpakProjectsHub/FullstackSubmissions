@@ -1,0 +1,24 @@
+browser-->>server:Get https://studies.cs.helsinki.fi/exampleapp/notes
+activate server
+server-->>browser: new_note
+deactivate server
+
+brower-->>server:Get https://studies.cs.helsinki.fi/exampleapp/notes
+activate server
+server-->>browser:note file 
+deactivate server
+
+browser-->>server :Get https://studies.cs.helsinki.fi/exampleapp/main.css
+activate server
+server-->> browser: css file load
+deactivate server
+
+browser-->>server :Get https://studies.cs.helsinki.fi/exampleapp/main.js
+server activated
+server-->>browser :main file load
+server deactivate
+
+browser -->> server :Get https://studies.cs.helsinki.fi/exampleapp/data.json
+server activate
+server-->> browser: data.json file load
+server deactivate
